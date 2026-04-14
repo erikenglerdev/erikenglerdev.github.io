@@ -1,0 +1,276 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ContactCard from '../components/ContactCard.astro';
+import BriefcaseBusiness from '@lucide/astro/icons/briefcase-business';
+import Camera from '@lucide/astro/icons/camera';
+import FolderGit2 from '@lucide/astro/icons/folder-git-2';
+import GraduationCap from '@lucide/astro/icons/graduation-cap';
+import Landmark from '@lucide/astro/icons/landmark';
+import Mail from '@lucide/astro/icons/mail';
+import MessageCircle from '@lucide/astro/icons/message-circle';
+import Phone from '@lucide/astro/icons/phone';
+import ShieldCheck from '@lucide/astro/icons/shield-check';
+
+const profile = {
+	name: 'Erik Engler',
+	age: 22,
+	role: 'Informatik-Student & Hochschulpolitiker',
+	intro: 'Persoenliches Profil',
+	summary:
+		'Ich verbinde ein Studium der Angewandten Informatik mit Engagement in der studentischen Selbstverwaltung und einem klaren, professionellen Auftritt.',
+	badges: ['Angewandte Informatik', 'Studierendenrat', 'Fachschaftsrat'],
+};
+
+const portrait = {
+	src: '/erik-portrait.png',
+	alt: 'Portrait von Erik Engler',
+	title: 'Klar, zuverlaessig und professionell in der Zusammenarbeit.',
+	description:
+		'Ein Auftritt, der akademisches Engagement und einen modernen Business-Anspruch ruhig zusammenfuehrt.',
+};
+
+const aboutPoints = [
+	'Im Studium der Angewandten Informatik baue ich ein belastbares technisches Fundament auf und lerne, komplexe Inhalte sauber, nachvollziehbar und praxisorientiert umzusetzen.',
+	'Im Studierendenrat uebernehme ich Verantwortung fuer Abstimmung, Transparenz und eine serioese Vertretung studentischer Interessen innerhalb der Hochschule.',
+	'Im Fachschaftsrat bringe ich mich dort ein, wo Organisation, Kommunikation und Verlaesslichkeit den Rahmen fuer gute Zusammenarbeit schaffen.',
+];
+
+const highlights = [
+	{
+		label: 'Studium',
+		value: 'Angewandte Informatik',
+		description: 'Analytisches Arbeiten, technisches Verstaendnis und ein praxisnaher Blick auf Loesungen.',
+		icon: GraduationCap,
+	},
+	{
+		label: 'Engagement',
+		value: 'StuRa & FSR',
+		description: 'Mitgestaltung von Kommunikation, Interessenvertretung und organisatorischer Verantwortung.',
+		icon: Landmark,
+	},
+	{
+		label: 'Arbeitsweise',
+		value: 'Strukturiert & verlaesslich',
+		description: 'Ein ruhiger, professioneller Stil mit Fokus auf Klarheit, Verbindlichkeit und Wirkung.',
+		icon: ShieldCheck,
+	},
+];
+
+// Zentrale Stelle fuer alle spaeter anpassbaren Kontakt- und Profil-Links.
+const contacts = [
+	{
+		title: 'Uni E-Mail',
+		value: 'erik.engler@uni-beispiel.de',
+		href: 'mailto:erik.engler@uni-beispiel.de',
+		icon: Mail,
+		description: 'Platzhalter fuer offizielle Hochschul- und Gremienanfragen.',
+		external: false,
+	},
+	{
+		title: 'Private E-Mail',
+		value: 'hello@erikengler.dev',
+		href: 'mailto:hello@erikengler.dev',
+		icon: Mail,
+		description: 'Platzhalter fuer Projekte, Kooperationen und persoenliche Anfragen.',
+		external: false,
+	},
+	{
+		title: 'Telefon',
+		value: '+49 170 0000000',
+		href: 'tel:+491700000000',
+		icon: Phone,
+		description: 'Direkter Kontakt fuer schnelle Abstimmungen.',
+		external: false,
+	},
+	{
+		title: 'WhatsApp',
+		value: 'wa.me/491700000000',
+		href: 'https://wa.me/491700000000',
+		icon: MessageCircle,
+		description: 'Platzhalter fuer unkomplizierte Rueckfragen.',
+		external: true,
+	},
+	{
+		title: 'Instagram',
+		value: '@erik.engler',
+		href: 'https://instagram.com/erik.engler',
+		icon: Camera,
+		description: 'Persoenliche Einblicke und Campus-Alltag.',
+		external: true,
+	},
+	{
+		title: 'LinkedIn',
+		value: 'linkedin.com/in/erik-engler',
+		href: 'https://linkedin.com/in/erik-engler',
+		icon: BriefcaseBusiness,
+		description: 'Professionelles Profil fuer Netzwerk und Karriere.',
+		external: true,
+	},
+	{
+		title: 'GitHub',
+		value: 'github.com/erikengler',
+		href: 'https://github.com/erikengler',
+		icon: FolderGit2,
+		description: 'Code, Experimente und technische Projekte.',
+		external: true,
+	},
+];
+---
+
+<Layout
+	title="Erik Engler | Informatik-Student & Hochschulpolitiker"
+	description="Landing Page von Erik Engler mit Fokus auf Studium, Engagement und einen modernen Business-Auftritt."
+>
+	<main class="relative">
+		<div class="mx-auto flex min-h-screen w-full max-w-7xl flex-col px-6 pb-20 pt-6 sm:px-8 lg:px-10">
+			<header class="sticky top-3 z-20">
+				<div class="flex items-center justify-between gap-4 rounded-full border border-[var(--color-border)] bg-white/88 px-5 py-3 shadow-[0_12px_28px_rgba(24,33,43,0.06)] backdrop-blur">
+					<div class="flex items-center gap-3">
+						<div class="flex size-10 items-center justify-center rounded-full bg-[color:var(--color-accent-strong)] text-sm font-semibold text-white">
+							EE
+						</div>
+						<div>
+							<p class="text-sm font-semibold text-[var(--color-text)]">{profile.name}</p>
+							<p class="text-xs font-medium uppercase tracking-[0.14em] text-[var(--color-muted)]">
+								{profile.role}
+							</p>
+						</div>
+					</div>
+					<div class="flex items-center gap-2">
+						<a
+							href="#about"
+							class="hidden rounded-full px-4 py-2 text-sm text-[var(--color-muted)] hover:text-[var(--color-text)] sm:inline-flex"
+						>
+							Profil
+						</a>
+						<a
+							href="#kontakt"
+							class="hidden rounded-full px-4 py-2 text-sm text-[var(--color-muted)] hover:text-[var(--color-text)] sm:inline-flex"
+						>
+							Kontakt
+						</a>
+					</div>
+				</div>
+			</header>
+
+			<section class="pt-5">
+				<div class="grid gap-6 rounded-[2.4rem] border border-[var(--color-border)] bg-white p-5 shadow-[0_24px_60px_rgba(24,33,43,0.06)] lg:grid-cols-[minmax(0,1.18fr)_320px] lg:items-start lg:gap-6 lg:p-6">
+					<div class="max-w-4xl lg:pr-4">
+						<div class="inline-flex rounded-full border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-[var(--color-muted)]">
+							{profile.intro}
+						</div>
+						<h1 class="mt-5 max-w-4xl text-5xl font-semibold tracking-[-0.065em] text-balance text-[var(--color-text)] sm:text-6xl lg:text-[4.2rem]">
+							{profile.name}
+							<span class="mt-3 block max-w-2xl text-[0.5em] font-medium leading-tight tracking-[-0.04em] text-[var(--color-muted)]">
+								{profile.role}
+							</span>
+						</h1>
+						<p class="mt-5 max-w-2xl text-lg leading-8 text-[var(--color-muted)] sm:text-[1.05rem]">
+							{profile.summary}
+						</p>
+
+						<div class="mt-7 grid gap-4 md:grid-cols-3">
+							{highlights.map(({ label, value, description, icon: Icon }) => (
+								<article class="rounded-[1.8rem] border border-[var(--color-border)] bg-[var(--color-surface-strong)] p-5 shadow-[0_14px_28px_rgba(24,33,43,0.04)]">
+									<div class="flex size-12 items-center justify-center rounded-[1.25rem] bg-[color:var(--color-accent-soft)] text-[color:var(--color-accent-strong)]">
+										<Icon class="size-5" strokeWidth={1.8} />
+									</div>
+									<p class="mt-5 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-[var(--color-muted)]">
+										{label}
+									</p>
+									<h2 class="mt-2 text-lg font-semibold tracking-[-0.03em] text-[var(--color-text)]">
+										{value}
+									</h2>
+									<p class="mt-3 text-sm leading-6 text-[var(--color-muted)]">{description}</p>
+								</article>
+							))}
+						</div>
+					</div>
+
+					<aside class="grid gap-4 lg:content-start">
+						<div class="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-surface)] p-4 shadow-[0_18px_46px_rgba(24,33,43,0.07)]">
+							<div class="overflow-hidden rounded-[1.6rem] bg-[var(--color-image-frame)]">
+								<img
+									src={portrait.src}
+									alt={portrait.alt}
+									class="aspect-[4/4.55] w-full object-cover object-center"
+									loading="eager"
+								/>
+							</div>
+						</div>
+
+						<div class="rounded-[1.7rem] border border-[var(--color-border)] bg-[var(--color-surface-subtle)] p-5">
+							<p class="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-[var(--color-muted)]">
+								Persoenlicher Eindruck
+							</p>
+							<h2 class="mt-3 text-xl font-semibold tracking-[-0.04em] text-[var(--color-text)]">
+								{portrait.title}
+							</h2>
+							<p class="mt-3 text-sm leading-6 text-[var(--color-muted)]">{portrait.description}</p>
+						</div>
+					</aside>
+				</div>
+			</section>
+
+			<section id="about" class="scroll-mt-28 pt-10">
+				<div class="grid gap-8 rounded-[2.5rem] border border-[var(--color-border)] bg-white p-7 shadow-[0_20px_50px_rgba(24,33,43,0.05)] lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:p-10">
+					<div class="max-w-md">
+						<p class="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-[var(--color-muted)]">
+							Profil
+						</p>
+						<h2 class="mt-4 text-3xl font-semibold tracking-[-0.05em] text-[var(--color-text)] sm:text-4xl">
+							Ein moderner, klarer Auftritt mit akademischem Hintergrund und organisatorischer Verantwortung.
+						</h2>
+						<p class="mt-5 text-base leading-7 text-[var(--color-muted)]">
+							Die Seite positioniert Erik bewusst nicht nur als Tech-Profil, sondern als Person mit Struktur, Verantwortung und professioneller Kommunikation.
+						</p>
+					</div>
+
+					<div class="grid gap-4">
+						{aboutPoints.map((point, index) => (
+							<article class="rounded-[1.8rem] border border-[var(--color-border)] bg-[var(--color-surface-subtle)] p-6">
+								<div class="flex items-start gap-4">
+									<div class="flex size-10 shrink-0 items-center justify-center rounded-full bg-white text-sm font-semibold text-[color:var(--color-accent-strong)] shadow-[0_8px_18px_rgba(24,33,43,0.05)]">
+										0{index + 1}
+									</div>
+									<p class="pt-1 text-base leading-7 text-[var(--color-muted)] sm:text-[1.02rem]">
+										{point}
+									</p>
+								</div>
+							</article>
+						))}
+					</div>
+				</div>
+			</section>
+
+			<section id="kontakt" class="scroll-mt-28 pt-12">
+				<div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+					<div class="max-w-2xl">
+						<p class="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-[var(--color-muted)]">
+							Kontakt
+						</p>
+						<h2 class="mt-3 text-2xl font-semibold tracking-[-0.05em] text-[var(--color-text)] sm:text-3xl">
+							Alle Kontaktmoeglichkeiten auf einen Blick.
+						</h2>
+					</div>
+					<p class="max-w-md text-sm leading-5 text-[var(--color-muted)] sm:text-right">
+						Zentral gepflegt in der Frontmatter von index.astro.
+					</p>
+				</div>
+
+				<div class="mt-6 grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+					{contacts.map((contact) => (
+						<ContactCard {...contact} />
+					))}
+				</div>
+			</section>
+
+			<footer class="mt-auto pt-14">
+				<div class="flex flex-col gap-3 border-t border-[var(--color-border)] py-6 text-sm text-[var(--color-muted)] sm:flex-row sm:items-center sm:justify-between">
+					<p>{profile.name} | Student der Angewandten Informatik | StuRa & FSR</p>
+					<p class="uppercase tracking-[0.14em]">Clean Business Profile</p>
+				</div>
+			</footer>
+		</div>
+	</main>
+</Layout>
