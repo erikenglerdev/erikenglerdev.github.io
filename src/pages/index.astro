@@ -16,41 +16,38 @@ const profile = {
 	role: 'Informatik-Student & Hochschulpolitiker',
 	intro: 'Persönliches Profil',
 	summary:
-		'Ich verbinde ein Studium der Angewandten Informatik mit Engagement in der studentischen Selbstverwaltung und einem klaren, professionellen Auftritt.',
+		'Ich studiere Informatik, weil ich gerne verstehe, wie die Welt von morgen funktioniert. Am liebsten aber bin ich mitten im Geschehen: Als Mitglied im StuRa und FSR bin ich eure Stimme am Campus. Mir ist wichtig, dass wir gemeinsam eine gute Zeit haben und etwas bewirken. Hier findest du alle Wege, wie wir in Kontakt bleiben können. Ich freu mich von dir zu hören!',
 	badges: ['Angewandte Informatik', 'Studierendenrat', 'Fachschaftsrat'],
 };
 
 const portrait = {
 	src: '/erik-portrait.png',
 	alt: 'Portrait von Erik Engler',
-	title: 'Klar, zuverlässig und professionell in der Zusammenarbeit.',
+	title: 'Zuverlässigkeit ist für mich die Basis, Begeisterung der Antrieb.',
 	description:
-		'Ein Auftritt, der akademisches Engagement und einen modernen Business-Anspruch ruhig zusammenführt.',
+		'Ich schätze klare Strukturen und einen professionellen Austausch, verliere dabei aber nie den Blick für die Menschen dahinter.',
 };
-
-const aboutPoints = [
-	'Im Studium der Angewandten Informatik baue ich ein belastbares technisches Fundament auf und lerne, komplexe Inhalte sauber, nachvollziehbar und praxisorientiert umzusetzen.',
-	'Im Studierendenrat übernehme ich Verantwortung für Abstimmung, Transparenz und eine seriöse Vertretung studentischer Interessen innerhalb der Hochschule.',
-	'Im Fachschaftsrat bringe ich mich dort ein, wo Organisation, Kommunikation und Verlässlichkeit den Rahmen für gute Zusammenarbeit schaffen.',
-];
 
 const highlights = [
 	{
 		label: 'Studium',
 		value: 'Angewandte Informatik',
-		description: 'Analytisches Arbeiten, technisches Verständnis und ein praxisnaher Blick auf Lösungen.',
+		description:
+			'Im Studium der Angewandten Informatik fasziniert mich vor allem die Verbindung aus Logik und Praxis. Es geht mir nicht nur um Code, sondern darum, wie wir Technik nutzen können, um echte Probleme zu lösen und den Alltag ein Stück einfacher zu machen.',
 		icon: GraduationCap,
 	},
 	{
 		label: 'Engagement',
 		value: 'StuRa & FSR',
-		description: 'Mitgestaltung von Kommunikation, Interessenvertretung und organisatorischer Verantwortung.',
+		description:
+			'Hochschulpolitik bedeutet für mich vor allem: Zuhören und Mitgestalten. Im StuRa und FSR setze ich mich dafür ein, dass wir als Studierende eine starke Stimme haben. Mir macht es Freude, Dinge gemeinsam zu organisieren und Verantwortung für eine lebendige Campus-Gemeinschaft zu übernehmen.',
 		icon: Landmark,
 	},
 	{
 		label: 'Arbeitsweise',
-		value: 'Strukturiert & verlässlich',
-		description: 'Ein ruhiger, professioneller Stil mit Fokus auf Klarheit, Verbindlichkeit und Wirkung.',
+		value: 'Strukturiert & Verlässlich',
+		description:
+			'Ich mag es, wenn Dinge funktionieren. Dabei ist mir eine ruhige und klare Kommunikation genauso wichtig wie ein Ergebnis, auf das man sich verlassen kann. Ich arbeite gerne strukturiert, verliere dabei aber nie die Menschen aus dem Blick, für die ich ein Projekt umsetze.',
 		icon: ShieldCheck,
 	},
 ];
@@ -116,10 +113,7 @@ const contacts = [
 		<div class="mx-auto flex min-h-screen w-full max-w-7xl flex-col px-6 pb-20 pt-6 sm:px-8 lg:px-10">
 			<header class="sticky top-3 z-20">
 				<div class="flex items-center justify-between gap-4 rounded-full border border-[var(--color-border)] bg-white/88 px-5 py-3 shadow-[0_12px_28px_rgba(24,33,43,0.06)] backdrop-blur">
-					<div class="flex items-center gap-3">
-						<div class="flex size-10 items-center justify-center rounded-full bg-[color:var(--color-accent-strong)] text-sm font-semibold text-white">
-							EE
-						</div>
+					<div class="flex items-center">
 						<div>
 							<p class="text-sm font-semibold text-[var(--color-text)]">{profile.name}</p>
 							<p class="text-xs font-medium uppercase tracking-[0.14em] text-[var(--color-muted)]">
@@ -128,12 +122,6 @@ const contacts = [
 						</div>
 					</div>
 					<div class="flex items-center gap-2">
-						<a
-							href="#about"
-							class="hidden rounded-full px-4 py-2 text-sm text-[var(--color-muted)] hover:text-[var(--color-text)] sm:inline-flex"
-						>
-							Profil
-						</a>
 						<a
 							href="#kontakt"
 							class="hidden rounded-full px-4 py-2 text-sm text-[var(--color-muted)] hover:text-[var(--color-text)] sm:inline-flex"
@@ -145,24 +133,26 @@ const contacts = [
 			</header>
 
 			<section class="pt-5">
-				<div class="grid gap-6 rounded-[2.4rem] border border-[var(--color-border)] bg-white p-5 shadow-[0_24px_60px_rgba(24,33,43,0.06)] lg:grid-cols-[minmax(0,1.18fr)_320px] lg:items-start lg:gap-6 lg:p-6">
-					<div class="max-w-4xl lg:pr-4">
-						<div class="inline-flex rounded-full border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-[var(--color-muted)]">
-							{profile.intro}
+				<div class="grid gap-6 rounded-[2.4rem] border border-[var(--color-border)] bg-white p-5 shadow-[0_24px_60px_rgba(24,33,43,0.06)] lg:grid-cols-[minmax(0,1.18fr)_320px] lg:items-stretch lg:gap-6 lg:p-6">
+					<div class="max-w-4xl lg:flex lg:h-full lg:flex-col lg:pr-4">
+						<div>
+							<div class="inline-flex rounded-full border border-[var(--color-border)] bg-[var(--color-surface)] px-4 py-2 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-[var(--color-muted)]">
+								{profile.intro}
+							</div>
+							<h1 class="mt-5 max-w-4xl text-5xl font-semibold tracking-[-0.065em] text-balance text-[var(--color-text)] sm:text-6xl lg:text-[4.2rem]">
+								{profile.name}
+								<span class="mt-3 block max-w-2xl text-[0.5em] font-medium leading-tight tracking-[-0.04em] text-[var(--color-muted)]">
+									{profile.role}
+								</span>
+							</h1>
+							<p class="mt-5 max-w-2xl text-lg leading-8 text-[var(--color-muted)] sm:text-[1.05rem]">
+								{profile.summary}
+							</p>
 						</div>
-						<h1 class="mt-5 max-w-4xl text-5xl font-semibold tracking-[-0.065em] text-balance text-[var(--color-text)] sm:text-6xl lg:text-[4.2rem]">
-							{profile.name}
-							<span class="mt-3 block max-w-2xl text-[0.5em] font-medium leading-tight tracking-[-0.04em] text-[var(--color-muted)]">
-								{profile.role}
-							</span>
-						</h1>
-						<p class="mt-5 max-w-2xl text-lg leading-8 text-[var(--color-muted)] sm:text-[1.05rem]">
-							{profile.summary}
-						</p>
 
-						<div class="mt-7 grid gap-4 md:grid-cols-3">
+						<div class="mt-7 grid gap-4 md:grid-cols-3 lg:min-h-0 lg:flex-1">
 							{highlights.map(({ label, value, description, icon: Icon }) => (
-								<article class="rounded-[1.8rem] border border-[var(--color-border)] bg-[var(--color-surface-strong)] p-5 shadow-[0_14px_28px_rgba(24,33,43,0.04)]">
+								<article class="flex h-full flex-col rounded-[1.8rem] border border-[var(--color-border)] bg-[var(--color-surface-strong)] p-5 shadow-[0_14px_28px_rgba(24,33,43,0.04)]">
 									<div class="flex size-12 items-center justify-center rounded-[1.25rem] bg-[color:var(--color-accent-soft)] text-[color:var(--color-accent-strong)]">
 										<Icon class="size-5" strokeWidth={1.8} />
 									</div>
@@ -178,13 +168,13 @@ const contacts = [
 						</div>
 					</div>
 
-					<aside class="grid gap-4 lg:content-start">
-						<div class="rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-surface)] p-4 shadow-[0_18px_46px_rgba(24,33,43,0.07)]">
-							<div class="overflow-hidden rounded-[1.6rem] bg-[var(--color-image-frame)]">
+					<aside class="grid gap-4 lg:h-full lg:grid-rows-[minmax(0,1fr)_auto]">
+						<div class="flex h-full flex-col rounded-[2rem] border border-[var(--color-border)] bg-[var(--color-surface)] p-4 shadow-[0_18px_46px_rgba(24,33,43,0.07)]">
+							<div class="h-full overflow-hidden rounded-[1.6rem] bg-[var(--color-image-frame)]">
 								<img
 									src={portrait.src}
 									alt={portrait.alt}
-									class="aspect-[4/4.55] w-full object-cover object-center"
+									class="h-full min-h-[360px] w-full object-cover object-center"
 									loading="eager"
 								/>
 							</div>
@@ -203,37 +193,6 @@ const contacts = [
 				</div>
 			</section>
 
-			<section id="about" class="scroll-mt-28 pt-10">
-				<div class="grid gap-8 rounded-[2.5rem] border border-[var(--color-border)] bg-white p-7 shadow-[0_20px_50px_rgba(24,33,43,0.05)] lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:p-10">
-					<div class="max-w-md">
-						<p class="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-[var(--color-muted)]">
-							Profil
-						</p>
-						<h2 class="mt-4 text-3xl font-semibold tracking-[-0.05em] text-[var(--color-text)] sm:text-4xl">
-							Ein moderner, klarer Auftritt mit akademischem Hintergrund und organisatorischer Verantwortung.
-						</h2>
-						<p class="mt-5 text-base leading-7 text-[var(--color-muted)]">
-							Die Seite positioniert Erik bewusst nicht nur als Tech-Profil, sondern als Person mit Struktur, Verantwortung und professioneller Kommunikation.
-						</p>
-					</div>
-
-					<div class="grid gap-4">
-						{aboutPoints.map((point, index) => (
-							<article class="rounded-[1.8rem] border border-[var(--color-border)] bg-[var(--color-surface-subtle)] p-6">
-								<div class="flex items-start gap-4">
-									<div class="flex size-10 shrink-0 items-center justify-center rounded-full bg-white text-sm font-semibold text-[color:var(--color-accent-strong)] shadow-[0_8px_18px_rgba(24,33,43,0.05)]">
-										0{index + 1}
-									</div>
-									<p class="pt-1 text-base leading-7 text-[var(--color-muted)] sm:text-[1.02rem]">
-										{point}
-									</p>
-								</div>
-							</article>
-						))}
-					</div>
-				</div>
-			</section>
-
 			<section id="kontakt" class="scroll-mt-28 pt-12">
 				<div class="rounded-[2.2rem] border border-[var(--color-border)] bg-white p-5 shadow-[0_18px_46px_rgba(24,33,43,0.05)] sm:p-6 lg:p-7">
 					<p class="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-[var(--color-muted)]">
@@ -249,9 +208,8 @@ const contacts = [
 			</section>
 
 			<footer class="mt-auto pt-14">
-				<div class="flex flex-col gap-3 border-t border-[var(--color-border)] py-6 text-sm text-[var(--color-muted)] sm:flex-row sm:items-center sm:justify-between">
+				<div class="flex flex-col items-center gap-3 border-t border-[var(--color-border)] py-6 text-center text-sm text-[var(--color-muted)]">
 					<p>{profile.name} | Student der Angewandten Informatik | StuRa & FSR</p>
-					<p class="uppercase tracking-[0.14em]">Clean Business Profile</p>
 				</div>
 			</footer>
 		</div>
